@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void PrefixBorderArray (string S) {
+int bp[S.length()];
+int n = S.length(); bp[0] = 0;
+int bpRight;
+for (int i = 1; i < n; ++i)
+{ // i - длина рассматриваемого префикса
+bpRight = bp[i-1]; // Позиция справа от предыдущей (i-1) грани
+while (bpRight && (S[i]!=S[bpRight])) bpRight = bp[bpRight-1];
+bp[i] = (S[i] == S[bpRight]) ? bpRight + 1 : 0;
+}
+cout << bp[n-1];
+}
+int main(){
+  string s;
+  cin >> s;
+  PrefixBorderArray(s);
+}
