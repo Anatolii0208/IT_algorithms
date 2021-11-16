@@ -1,0 +1,18 @@
+#include <iostream>
+#include <string>
+using namespace std;
+ 
+int main() {
+    string s;
+    cin >> s;
+    int max = 0;
+    for(int i = 1; i < s.length() && s.length() - i > max; i++) { 
+        int j = 0;
+        while(j < s.length() - i && s.at(j) == s.at(i + j))  
+            j++;
+        if(j > max)  
+            max = j;
+    }
+    cout << max;
+    return 0;
+}
