@@ -1,0 +1,5 @@
+Left binary search:
+Let's imagine that we've got not correct element then we need to move left board. And we wiil move it to middle + 1 because we know that middle element is not correct so we can slice him too.
+If our element is correct we don't know is this element is an answer or another so we will move right board to midlle element.
+Right binary search :
+We do the same but if we have incorrect element we need to move right board and all correct elements are on the left side so we need to equel right board = middle  - 1 element
